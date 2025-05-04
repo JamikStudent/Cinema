@@ -1,5 +1,5 @@
 from tkinter import messagebox
-from Connect import connect_db
+from App.ConnectDB.Connect import connect_db
 import tkinter as tk
 def add_film(root, entry_name, entry_genre, entry_duration, entry_age, text_area):
     print("добавление фильма")

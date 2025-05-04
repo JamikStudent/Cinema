@@ -1,6 +1,6 @@
 import tkinter as tk
 from ShowFilms import show_films
-from AddFilm import add_film
+from App.AddData.AddFilm import add_film
 
 def create_window(root):
     print("создание окна")

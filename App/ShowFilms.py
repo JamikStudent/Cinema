@@ -1,5 +1,5 @@
 import tkinter as tk
-from Fetch import fetch_films
+from App.ReadData.Fetch import fetch_films
 
 def show_films(root, text_area):
     print("показ фильма")

@@ -1,4 +1,4 @@
-from Connect import connect_db
+from App.ConnectDB.Connect import connect_db
 from tkinter import messagebox
 
 def fetch_films():
