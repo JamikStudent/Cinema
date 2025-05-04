@@ -16,7 +16,7 @@ def update_seat_combobox(seance_id, reserve_seat_combobox):
             JOIN "Seance" sc ON s.id_hall = sc.id_hall
             WHERE sc.id_seance = %s
             AND s.is_occupied = false
-        """, (seance_id,))
+        """, (seance_id))
         seats = [str(row[0]) for row in cursor.fetchall()]
 
         cursor.close()
