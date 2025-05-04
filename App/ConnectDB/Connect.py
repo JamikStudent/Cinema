@@ -1,15 +1,16 @@
 import psycopg2
 from tkinter import messagebox
+from DataToConnect import dbname, user, password, host, port
 
 def connect_db():
     try:
         conn = psycopg2.connect(
-            dbname="Cinema",
-            user="postgres",
-            password="1234",
-            host="localhost",
-            port="5432",
-            client_encoding="UTF8"  # Явно задаем кодировку
+            dbname=dbname,
+            user=user,
+            password=password,
+            host=host,
+            port=port,
+            client_encoding="UTF8"
         )
         return conn
     except Exception as e:
