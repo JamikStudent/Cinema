@@ -2,7 +2,6 @@ import psycopg2
 from tkinter import messagebox
 
 def connect_db():
-    print("коннект")
     try:
         conn = psycopg2.connect(
             dbname="Cinema",

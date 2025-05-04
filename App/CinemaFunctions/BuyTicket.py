@@ -1,9 +1,7 @@
 from tkinter import messagebox
-from ConnectDB.Connect import connect_db
-import tkinter as tk
+from App.ConnectDB.Connect import connect_db
 
-def buy_ticket(seance_combobox, seat_combobox, client_combobox, cashier_combobox, price_entry, text_area):
-    print("покупка билета")
+def buy_ticket(seance_combobox, seat_combobox, client_combobox, cashier_combobox, price_entry):
     id_seance = seance_combobox.get()
     id_seat = seat_combobox.get()
     id_client = client_combobox.get()
@@ -38,6 +36,5 @@ def buy_ticket(seance_combobox, seat_combobox, client_combobox, cashier_combobox
         cursor.close()
         conn.close()
         messagebox.showinfo("Успех", "Билет куплен!")
-        text_area.insert(tk.END, f"Билет куплен: Сеанс {id_seance}, Место {id_seat}, Цена {price}\n")
     except Exception as e:
         messagebox.showerror("Ошибка", f"Ошибка при покупке билета: {e}")

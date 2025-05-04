@@ -1,8 +1,8 @@
 from tkinter import messagebox
-from ConnectDB.Connect import connect_db
+from App.ConnectDB.Connect import connect_db
 import tkinter as tk
 
-def add_client(full_name_entry, phone_entry, sex_entry, text_area):
+def add_client(full_name_entry, phone_entry, sex_entry):
     print("добавление клиента")
     full_name = full_name_entry.get()
     phone = phone_entry.get()
@@ -27,7 +27,6 @@ def add_client(full_name_entry, phone_entry, sex_entry, text_area):
         cursor.close()
         conn.close()
         messagebox.showinfo("Успех", f"Клиент добавлен с ID: {new_id}!")
-        text_area.insert(tk.END, f"Клиент добавлен: ID {new_id}, Имя {full_name}\n")
         full_name_entry.delete(0, tk.END)
         phone_entry.delete(0, tk.END)
         sex_entry.delete(0, tk.END)

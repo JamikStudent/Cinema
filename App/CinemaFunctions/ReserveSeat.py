@@ -1,9 +1,8 @@
 from tkinter import messagebox
-from ConnectDB.Connect import connect_db
+from App.ConnectDB.Connect import connect_db
 import tkinter as tk
 
-def reserve_seat(seance_combobox, seat_combobox, text_area):
-    print("бронирование места")
+def reserve_seat(seance_combobox, seat_combobox):
     id_seance = seance_combobox.get()
     id_seat = seat_combobox.get()
 
@@ -37,6 +36,5 @@ def reserve_seat(seance_combobox, seat_combobox, text_area):
         cursor.close()
         conn.close()
         messagebox.showinfo("Успех", f"Место {id_seat} на сеанс {id_seance} забронировано!")
-        text_area.insert(tk.END, f"Забронировано: Сеанс {id_seance}, Место {id_seat}\n")
     except Exception as e:
         messagebox.showerror("Ошибка", f"Ошибка при бронировании: {e}")
