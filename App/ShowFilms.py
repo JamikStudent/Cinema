@@ -8,5 +8,5 @@ def show_films(root, text_area):
     for film in films:
         film_str = [str(item) for item in film]
         text_area.insert(tk.END,
-                        f"Название: {film_str[0]}, Жанр: {film_str[1]}, "
-                        f"Длительность: {film_str[2]} мин, Возраст: {film_str[3]}+\n")
+                        f"Название: {film_str[0]}\n Жанр: {film_str[1]}\n"
+                        f"Длительность: {film_str[2]} мин\n Возраст: {film_str[3]}\n\n")

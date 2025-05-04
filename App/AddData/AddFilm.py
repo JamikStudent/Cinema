@@ -1,6 +1,8 @@
 from tkinter import messagebox
 from App.ConnectDB.Connect import connect_db
 import tkinter as tk
+from App.ShowFilms import show_films
+
 def add_film(root, entry_name, entry_genre, entry_duration, entry_age, text_area):
     print("добавление фильма")
     name = entry_name.get()
@@ -23,13 +25,12 @@ def add_film(root, entry_name, entry_genre, entry_duration, entry_age, text_area
     if conn is None:
         return
 
-    id=16
 
     try:
         cursor = conn.cursor()
         cursor.execute(
-            "INSERT INTO \"Film\" (id_film, name, genre, duration, age_restriction) VALUES (%s, %s, %s, %s, %s)",
-            (id, name, genre, duration, age_restriction)
+            "INSERT INTO \"Film\" (name, genre, duration, age_restriction) VALUES ( %s, %s, %s, %s)",
+            (name, genre, duration, age_restriction)
         )
         conn.commit()
         cursor.close()
@@ -39,7 +40,7 @@ def add_film(root, entry_name, entry_genre, entry_duration, entry_age, text_area
         entry_genre.delete(0, tk.END)
         entry_duration.delete(0, tk.END)
         entry_age.delete(0, tk.END)
-        from ShowFilms import show_films
+
         show_films(root, text_area)
     except Exception as e:
         messagebox.showerror("Ошибка", f"Ошибка при добавлении фильма: {e}")
