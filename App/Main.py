@@ -7,7 +7,7 @@ from Windows.TicketWindow import TicketFrame
 
 def create_window(root):
     root.title("Кинотеатр")
-    root.geometry("1200x400")
+    root.geometry("1000x400")
 
     # Скрываем вкладки сверху
     style = ttk.Style()
